@@ -1,0 +1,324 @@
+/* ==========================================
+   Global Styles & Variables (Night Blue & Pastel Pink)
+   ========================================== */
+:root {
+    --night-bg: #0b132b;
+    --night-card: #1c2541;
+    --night-card-hover: #233055;
+    --pastel-pink: #d98ab0;
+    --dark-pink: #a34f7b;
+    --light-pink-bg: #fff5fa;
+    --off-white: #f4f4f6;
+    --gray-text: #a0aab2;
+    --star-yellow: #ffd166;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+
+body {
+    background-color: var(--night-bg);
+    color: var(--off-white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background ambient glow effect */
+body::before {
+    content: '';
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(217, 138, 176, 0.12) 0%, rgba(11, 19, 43, 0) 70%);
+    top: -100px;
+    right: -100px;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(163, 79, 123, 0.08) 0%, rgba(11, 19, 43, 0) 70%);
+    bottom: -100px;
+    left: -100px;
+    z-index: -1;
+}
+
+/* ==========================================
+   Pages Management (Single Page Application)
+   ========================================== */
+.page {
+    display: none;
+    width: 100%;
+    max-width: 680px;
+    padding: 50px 30px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: fadeInPage 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.page.active {
+    display: flex;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==========================================
+   Typography & Headings
+   ========================================== */
+.badge-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: bounceBadge 2s infinite alternate;
+}
+
+@keyframes bounceBadge {
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
+}
+
+.main-title {
+    font-size: 2.4rem;
+    color: var(--off-white);
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-shadow: 0 0 20px rgba(244, 244, 246, 0.25);
+    line-height: 1.3;
+}
+
+.section-title {
+    font-size: 2.1rem;
+    color: var(--pastel-pink);
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-shadow: 0 0 15px rgba(217, 138, 176, 0.2);
+}
+
+.subtitle, .section-desc {
+    font-size: 1.15rem;
+    color: var(--gray-text);
+    margin-bottom: 35px;
+    line-height: 1.7;
+    max-width: 580px;
+}
+
+/* ==========================================
+   Interactive Buttons (Heart Style)
+   ========================================== */
+.heart-btn {
+    background-color: var(--pastel-pink);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(217, 138, 176, 0.35);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.heart-symbol {
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.heart-btn:hover {
+    background-color: var(--dark-pink);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 25px rgba(163, 79, 123, 0.5);
+}
+
+.heart-btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* ==========================================
+   Page 2: Star Jar Component Styling
+   ========================================== */
+#page2 {
+    background-color: #0e162f;
+}
+
+.jar-container {
+    position: relative;
+    width: 155px;
+    height: 220px;
+    border: 4px solid var(--pastel-pink);
+    border-radius: 22px 22px 48px 48px;
+    background: rgba(255, 255, 255, 0.04);
+    margin: 10px auto 25px auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(217, 138, 176, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.jar-container:hover {
+    border-color: var(--off-white);
+    box-shadow: 0 0 35px rgba(217, 138, 176, 0.3);
+    transform: scale(1.02);
+}
+
+.jar-lid {
+    position: absolute;
+    top: -16px;
+    width: 90px;
+    height: 16px;
+    background: var(--dark-pink);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.jar-shine {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    width: 8px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+
+.star-icon {
+    font-size: 3.4rem;
+    color: var(--star-yellow);
+    filter: drop-shadow(0 0 12px var(--star-yellow));
+    animation: starPulse 1.8s infinite alternate ease-in-out;
+}
+
+@keyframes starPulse {
+    from {
+        transform: scale(0.95) rotate(-5deg);
+        filter: drop-shadow(0 0 8px var(--star-yellow));
+    }
+    to {
+        transform: scale(1.1) rotate(5deg);
+        filter: drop-shadow(0 0 18px var(--star-yellow));
+    }
+}
+
+.star-message-box {
+    min-height: 110px;
+    max-width: 540px;
+    background: rgba(28, 37, 65, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(217, 138, 176, 0.35);
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin: 0 auto 30px auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--off-white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================
+   Page 3: Cute Message Card Styling
+   ========================================== */
+#page3 {
+    background-color: var(--night-card);
+}
+
+.cute-card {
+    background: rgba(11, 19, 43, 0.65);
+    backdrop-filter: blur(15px);
+    border: 2px solid var(--pastel-pink);
+    border-radius: 25px;
+    padding: 40px 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    position: relative;
+    text-align: left;
+}
+
+.card-paragraph {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--off-white);
+    margin-bottom: 18px;
+}
+
+.card-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-text {
+    color: #ffccd5;
+    font-weight: 500;
+}
+
+.cute-card::after {
+    content: '💖';
+    position: absolute;
+    bottom: -16px;
+    right: 40px;
+    font-size: 1.6rem;
+    background: var(--night-card);
+    padding: 0 12px;
+    border-radius: 50%;
+}
+
+/* ==========================================
+   Responsive Design Adjustments
+   ========================================== */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.9rem;
+    }
+    .section-title {
+        font-size: 1.6rem;
+    }
+    .page {
+        padding: 30px 15px;
+    }
+    .cute-card {
+        padding: 30px 20px;
+        text-align: center;
+    }
+    .card-paragraph {
+        font-size: 1.05rem;
+    }
+}

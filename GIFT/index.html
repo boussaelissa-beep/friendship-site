@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift to the best friend in the world ✨</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= PAGE 1: HERO SECTION ================= -->
+    <div class="page active" id="page1">
+        <div class="content-wrapper">
+            <span class="badge-icon">✨</span>
+            <h1 class="main-title">Gift to the best friend in the world 💖</h1>
+            <p class="subtitle">
+                Since you’re the best friend in the world, Ammar, I decided to create this little website just for you. I filled it with love, sweet memories, and little surprises, because you deserve something as special as you are. 💗
+            </p>
+            <button class="heart-btn" onclick="nextPage(2)">
+                <span class="heart-symbol">❤️</span> Click Here For Your Gift
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 2: STAR JAR SECTION ================= -->
+    <div class="page" id="page2">
+        <div class="content-wrapper">
+            <h2 class="section-title">The Magical Star Jar 🌟</h2>
+            <p class="section-desc">
+                Hey Ammar! This jar holds 10 special little notes just for you. 
+                Click on the jar to pull out a funny and sweet note. Read them all carefully!
+            </p>
+            
+            <div class="jar-container" onclick="nextStarMessage()" title="Click the jar!">
+                <div class="jar-lid"></div>
+                <div class="jar-shine"></div>
+                <div class="star-icon">⭐</div>
+            </div>
+
+            <div class="star-message-box" id="starMsg">
+                Click the jar right now to unlock your very first star note, Ammar! Let's see what it says ✨
+            </div>
+
+            <button class="heart-btn" onclick="nextPage(3)">
+                <span class="heart-symbol">❤️</span> Continue To Next Page
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 3: CUTE MESSAGE SECTION ================= -->
+    <div class="page" id="page3">
+        <div class="content-wrapper">
+            <h2 class="section-title">A Message From The Heart 🌸</h2>
+            
+            <div class="cute-card">
+                <p class="card-paragraph">
+                    Dear Ammar,You’re honestly the cutest boy ever, and I hope you never forget that! You’re not just my best friend, you’re someone incredibly special to my heart. I’ll never forget how many times you made me smile and how you were always one of the reasons behind my happiness. 🥹. 
+                </p>
+                <p class="card-paragraph">
+                    I wish you endless happiness, beautiful days, and all the lovely things this world has to offer. I hope life is always kind to you, because you deserve so much good. And please, never stop being your silly, adorable, CUTE self! 😂🎀. 
+                </p>
+                <p class="card-paragraph highlight-text">
+                    I want to keep caring about you, cheering for you, and being by your side for a very, very long time. You’re precious to me, little cutie, and I’m so grateful to have you in my life. Never forget that, okay? Sending you the biggest hug ever! 🧸💗
+                </p>
+            </div>
+
+            <button class="heart-btn" onclick="nextPage(1)">
+                <span class="heart-symbol">🔄</span> Start Over From The Beginning
+            </button>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
